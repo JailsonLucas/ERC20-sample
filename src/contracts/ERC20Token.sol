@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -8,7 +8,7 @@ contract ERC20Token is ERC20, Ownable {
     /**
      * @dev ERC20 Offer Token
      */
-    constructor() ERC20("ERC20 Sample", "ES") {}
+    constructor() Ownable(msg.sender) ERC20("ERC20 Sample", "ES") {}
 
     /**
      * @dev Allow minting by the owner
